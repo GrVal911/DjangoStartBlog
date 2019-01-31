@@ -14,7 +14,7 @@ class Post(models.Model):
         return reverse('post_detail_url', kwargs={'slug':self.slug})
 
     def __str__(self):
-        return '{}'.format(self.title)
+        return self.title
 
 class Tag(models.Model):
     title = models.CharField(max_length=50)
@@ -24,4 +24,4 @@ class Tag(models.Model):
         return '{}'.format(self.title)
 
     def get_absolute_url(self):
-        return reverse('tag_detail.url', kwargs={'slug':self.slug})
+        return reverse('tag_detail_url', kwargs={'slug':self.slug} )
